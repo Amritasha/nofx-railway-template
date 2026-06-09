@@ -33,8 +33,22 @@ Images are pulled from the official GHCR registry (`ghcr.io/nofxaios/nofx`) and 
 | `DB_PASSWORD` | Postgres password |
 | `DB_NAME` | Postgres database name |
 
+## Persistent storage (required)
+
+NOFX stores its SQLite database at `/app/data/data.db`. Without a volume, **all data is lost on every redeploy**.
+
+After deploying, add a volume in the Railway dashboard:
+
+1. Open your service → **Volumes** tab
+2. Click **Add Volume**
+3. Set mount path to `/app/data`
+4. Redeploy
+
+That's it — your data persists across restarts and redeployments.
+
 ## Steps to deploy
 
 1. Click **Deploy on Railway**
 2. Set `JWT_SECRET` to a random 32+ character string
 3. Deploy — your NOFX instance will be live at the Railway-provided URL
+4. Add a Volume mounted at `/app/data` (see above) to persist your data
