@@ -19,8 +19,24 @@ Images are pulled from the official GHCR registry (`ghcr.io/nofxaios/nofx`) and 
 | `JWT_SECRET` | Yes | JWT signing secret (min 32 chars). Generate: `openssl rand -base64 32` |
 | `DATA_ENCRYPTION_KEY` | No | AES-256 key (Base64, 32 bytes). Auto-generated if not set. |
 | `RSA_PRIVATE_KEY` | No | RSA private key (PEM). Auto-generated if not set. |
-| `TRANSPORT_ENCRYPTION` | No | Set `true` for HTTPS deployments (default: `false`) |
-| `NOFX_TIMEZONE` | No | Timezone (default: `Asia/Shanghai`) |
+| `TRANSPORT_ENCRYPTION` | No | Set `true` for HTTPS deployments — Railway provides HTTPS by default, recommended (default: `false`) |
+| `NOFX_TIMEZONE` | No | Timezone e.g. `America/New_York`, `Asia/Kolkata` (default: `Asia/Shanghai`) |
+
+### AI Model Keys (optional)
+
+| Variable | Description |
+|---|---|
+| `DEEPSEEK_API_KEY` | DeepSeek API key for AI trading analysis |
+| `OPENAI_API_KEY` | OpenAI API key |
+| `ANTHROPIC_API_KEY` | Anthropic (Claude) API key |
+
+### Market Data & Exchange Keys (optional)
+
+| Variable | Description |
+|---|---|
+| `ALPACA_API_KEY` | Alpaca API key for US stock trading |
+| `ALPACA_SECRET_KEY` | Alpaca secret key |
+| `TWELVEDATA_API_KEY` | Twelve Data API key for market data feeds |
 
 ### Database (optional — defaults to SQLite)
 
